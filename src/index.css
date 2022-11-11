@@ -15,5 +15,5 @@ code {
 html {
   overflow: -moz-scrollbars-vertical;
   overflow-y: auto;
-  /* overflow: scroll; */
+  overflow-x: hidden;
 }

@@ -15,8 +15,8 @@ function Header() {
         bgcolor: "#6154C2",
         height: "60px",
         px: 5,
-        position: "absolute",
         width: "100%",
+        position: "relative",
       }}
       display="flex"
       alignItems="center"

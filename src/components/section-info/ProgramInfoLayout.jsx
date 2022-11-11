@@ -1,26 +1,31 @@
 import React from "react";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { ReactComponent as Icon } from "../../assets/icons/Icon.svg";
 import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
 import { ReactComponent as Pattern } from "../../assets/icons/Pattern.svg";
 import { Container } from "@mui/system";
 
 function ProgramInfoLayout() {
+  const matches = useMediaQuery("(min-width:527px)");
   return (
     <Container>
       <Grid
         container
-        display="flex"
+        spacing={{ xs: 1, sm: 1, md: 2 }}
+        columnGap={{ xs: 1, sm: 1, md: 2 }}
+        columns={{ xs: 1, sm: 5, md: 12 }}
         alignContent="center"
         justifyContent="space-around"
       >
         <Grid
           item
-          xs={5}
+          xs={1}
+          sm={3}
+          md={5.5}
           display="flex"
           sx={{
             flexDirection: "column",
-            mt: 35,
+            mt: 20,
             position: "relative",
             alignItems: "center",
           }}
@@ -73,9 +78,11 @@ function ProgramInfoLayout() {
 
         <Grid
           item
-          xs={5.5}
+          xs={2}
+          sm={3}
+          md={5.5}
           display="flex"
-          sx={{ flexDirection: "column", mt: 35, pl: 10 }}
+          sx={{ flexDirection: "column", mt: 20 }}
         >
           <Grid container display="flex" sx={{ alignItems: "center" }}>
             <Grid item xs={3}>
@@ -161,9 +168,11 @@ function ProgramInfoLayout() {
                 <Typography sx={{ color: "#535353" }}>3 Aug 2020</Typography>
               </Grid>
             </Grid>
-            <Grid sx={{ position: "absolute", zIndex: -10, right: -40 }}>
-              <Pattern />
-            </Grid>
+            {!matches ? null : (
+              <Grid sx={{ position: "absolute", zIndex: -10 }}>
+                <Pattern />
+              </Grid>
+            )}
           </Grid>
         </Grid>
       </Grid>
